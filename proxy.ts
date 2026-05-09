@@ -7,7 +7,7 @@ export async function proxy(request: NextRequest) {
   const token = await getToken({req: request})
   const url = request.nextUrl
 
-  if(token && 
+  if(!token && 
     (
       url.pathname.startsWith('/sign-in') ||
       url.pathname.startsWith('/sign-up') ||
